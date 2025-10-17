@@ -216,7 +216,7 @@ h3{ margin:0 0 8px; }
 .cartline__top{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin:0 0 4px 0; }
 .cartline__top .name{
   margin:0; font-size:.95rem; line-height:1.2;
-  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden;
+  display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp: 2; overflow:hidden;
 }
 .cartline__top .lineprice{ white-space:nowrap; font-weight:600; }
 .cartline__qty{ display:flex; align-items:center; gap:6px; margin:0; }
@@ -224,7 +224,7 @@ h3{ margin:0 0 8px; }
 .cartline__qty .qty{ min-width:22px; text-align:center; font-weight:500; }
 
 /* =========================================
-   Footer
+  Footer
 ========================================= */
 .footer{ border-top:1px solid var(--line); background:#fff; }
 .footer__inner{ display:flex; align-items:center; justify-content:space-between; min-height:56px; }
@@ -290,4 +290,119 @@ mark{ background:#efe9ff; color:inherit; padding:0 .1em; border-radius:4px; }
 @media (max-width:760px){
   .filters{ flex-direction:column; align-items:stretch; }
   .search{ width:100%; }
+}
+
+/* ==== Botones del carrito (versión pastel suave sin íconos) ==== */
+.cart__foot {
+  gap: 12px;
+}
+
+.cart__foot .btn {
+  width: 100%;
+  height: 52px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+/* --- Finalizar por WhatsApp (verde agua pastel, más claro) --- */
+#checkout {
+  background: #b5f5dc; /* verde agua muy suave */
+  color: #0b3d2c;
+  border: 1px solid #a1ebcd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+#checkout:hover {
+  background: #a1ebcd;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+}
+
+#checkout:active {
+  background: #93e3c1;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Vaciar carrito (outline lila pastel elegante) --- */
+#clear {
+  background: #ffffff;
+  color: #6a4bc3;
+  border: 1.5px solid #ded1ff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+#clear:hover {
+  background: #f9f6ff;
+  border-color: #d1c0ff;
+  color: #5737a3;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+#clear:active {
+  transform: translateY(0);
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .cart__foot .btn {
+    height: 50px;
+    font-size: 0.95rem;
+  }
+}
+
+#preguntas .grid--2 {
+  align-items: stretch; /* iguala la altura */
+}
+
+#preguntas .card--soft {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra el texto verticalmente */
+}
+
+/* ===== Cart sin “hueco”: items solo lo necesario, con scroll si hace falta ===== */
+:root{
+  --cart-head: 56px;   /* alto aprox del header del carrito */
+  --cart-foot: 160px;  /* alto aprox del footer (total + 2 botones) */
+}
+
+.cart{
+  display:flex;
+  flex-direction:column;
+  height:100vh;                 /* usar toda la altura de la ventana */
+}
+
+.cart__head{ flex:0 0 auto; min-height: var(--cart-head); }
+
+.cart__items{
+  flex:0 0 auto;                /* ⬅ deja de estirar el hueco */
+  max-height: calc(100vh - var(--cart-head) - var(--cart-foot));
+  overflow:auto;                /* si hay muchos ítems, scrollea esta zona */
+  padding:12px 16px;            /* podés ajustar si querés aún más compacto */
+  gap:10px;
+}
+
+.cart__foot{
+  flex:0 0 auto;
+  position: sticky;             /* queda a la vista cuando hay scroll en items */
+  bottom: 0;
+  background:#fff;
+  border-top:1px solid var(--line);
+  padding:12px 16px;
+  gap:10px;
+}
+
+/* Más preciso en móvil: el footer es un poco más bajo */
+@media (max-width:760px){
+  :root{ --cart-foot: 140px; }  /* botones algo más bajos en tu diseño mobile */
+  .cart__head{ min-height: 52px; }
+  .cart__items{ padding:10px 12px; gap:8px; }
+  .cart__foot{ padding:10px 12px; gap:10px; }
 }

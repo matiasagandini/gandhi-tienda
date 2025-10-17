@@ -238,8 +238,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $('#clear').addEventListener('click', () => {
-    state.cart = []; saveCart(); renderCart(); updateCartCount();
-  });
+  if (!state.cart.length) return; // no hace nada si está vacío
+
+  const confirmar = confirm('¿Estás seguro de que querés vaciar el carrito?');
+  if (confirmar) {
+    state.cart = [];
+    saveCart();
+    renderCart();
+    updateCartCount();
+  }
+});
 
   // WhatsApp contacto general
   const contactMsg = encodeURIComponent('Hola! Quería consultar por productos de Gandhi.');
