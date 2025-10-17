@@ -3,14 +3,71 @@ const WHATSAPP_NUMBER = '5491161972026'; // 👈 Reemplazá por tu número (sin 
 
 // Catálogo inicial (podés reemplazarlo por tu JSON)
 const PRODUCTS = [
-  { id: 1, name: 'Huggies Natural Care XXG 50u + Toallitas', price: 24345, category: 'Pañales', tag: 'Más vendido', img: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=1200&auto=format&fit=crop' },
-  { id: 2, name: 'Pampers Deluxe XG 50u', price: 31135, category: 'Pañales', tag: 'Nuevo', img: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop' },
-  { id: 3, name: 'Toallitas Estrella 50u', price: 2568, category: 'Toallitas', tag: 'Oferta', img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop' },
-  { id: 4, name: 'Shampoo Johnson Manzanilla 200ml', price: 4993, category: 'Higiene', tag: 'Top', img: 'https://images.unsplash.com/photo-1605731414532-6b26976cc153?q=80&w=1200&auto=format&fit=crop' },
-  { id: 5, name: 'Pampers Baby-Dry M-G-XG', price: 26670, category: 'Pañales', tag: 'Promo', img: 'https://images.unsplash.com/photo-1562709462-9bb5ca1820f2?q=80&w=1200&auto=format&fit=crop' },
-  { id: 6, name: 'Pampers Splashers G-XG', price: 13000, category: 'Pañales', tag: 'Verano', img: 'https://images.unsplash.com/photo-1615397349754-2105d3c2b654?q=80&w=1200&auto=format&fit=crop' },
-  { id: 7, name: 'Pampers Pants XG 52u', price: 36260, category: 'Pañales', tag: 'Pack', img: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?q=80&w=1200&auto=format&fit=crop' },
-  { id: 8, name: 'Gel de Baño Bebé 500ml', price: 7990, category: 'Higiene', tag: 'Suave', img: 'https://images.unsplash.com/photo-1609848427764-efb9d4d66a4b?q=80&w=1200&auto=format&fit=crop' }
+  {
+    id: 1,
+    name: 'Pañales Huggies Dermacare G x48 Unidades',
+    price: 24345,
+    category: 'Pañales',
+    tag: 'Promo',
+    img: 'https://www.huggies.com.ar/dw/image/v2/BFDX_PRD/on/demandware.static/-/Sites-MasAbrazos_AR-storefront/default/dw44258f70/images/Dermacare/7809604031495__0.jpg?sw=550&sh=550&sm=fit'
+  },
+  {
+    id: 2,
+    name: 'Pañales Premium Huggies Natural Care G Más Suave 60 Unidades',
+    price: 14250,
+    category: 'Pañales',
+    tag: 'Clásico',
+    img: 'https://www.huggies.com.ar/dw/image/v2/BFDX_PRD/on/demandware.static/-/Sites-MasAbrazos_AR-storefront/default/dwb594eff6/images/Natural%20Care%202024/7794626013423.jpg?sw=280&sh=280&sm=fit'
+  },
+  {
+    id: 3,
+    name: 'Pañales Natural Care Xxg Pack Mensual x96 Unidades',
+    price: 31135,
+    category: 'Pañales',
+    tag: 'Premium',
+    img: 'https://www.huggies.com.ar/dw/image/v2/BFDX_PRD/on/demandware.static/-/Sites-MasAbrazos_AR-storefront/default/dwa902c5e0/images/Natural%20Care%202024/Hero_7794626013959.jpg?sw=280&sh=280&sm=fit'
+  },
+  {
+    id: 4,
+    name: 'Pampers Baby-Dry M-G-XG',
+    price: 26670,
+    category: 'Pañales',
+    tag: 'Confort',
+    img: 'https://images.unsplash.com/photo-1562709462-9bb5ca1820f2?q=80&w=800'
+  },
+  {
+    id: 5,
+    name: 'Pampers Pants XG 52 un',
+    price: 36260,
+    category: 'Pañales',
+    tag: 'Pack Ahorro',
+    img: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?q=80&w=800'
+  },
+  {
+    id: 6,
+    name: 'Toallitas Estrella 50 un',
+    price: 2568,
+    category: 'Toallitas',
+    tag: 'Diario',
+    img: 'https://images.unsplash.com/photo-1609848427764-efb9d4d66a4b?q=80&w=800'
+  },
+  {
+    id: 7,
+    name: 'Shampoo Johnson Manzanilla 200 ml',
+    price: 4993,
+    category: 'Higiene',
+    tag: 'Suave',
+    img: 'https://images.unsplash.com/photo-1605731414532-6b26976cc153?q=80&w=800'
+  },
+  {
+    id: 8,
+    name: 'Gel de Baño Bebé 500 ml',
+    price: 7990,
+    category: 'Higiene',
+    tag: 'Nuevo',
+    img: 'https://images.unsplash.com/photo-1605721911519-3dfeb3be25e0?q=80&w=800'
+  }
+  
 ];
 
 const state = {
